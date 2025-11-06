@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lupa Kata Sandi - PTB</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="min-h-screen flex">
+    <!-- ========================================
+         LEFT SIDE - FORM SECTION
+         Area formulir di sisi kiri dengan latar putih
+         ======================================== -->
+    <div class="w-full lg:w-1/2 flex flex-col bg-white px-8 py-6 lg:px-16">
+      <!-- BACK BUTTON - Tombol Kembali
+             Navigasi untuk kembali ke halaman sebelumnya -->
+      <div class="mb-8">
+        <a
+          href="#"
+          class="flex items-center text-gray-600 hover:text-gray-800 transition-colors"
+        >
+          <!-- Icon Panah Kiri -->
+          <svg
+            class="w-5 h-5 mr-2"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M15 19l-7-7 7-7"
+            ></path>
+          </svg>
+          <span class="text-sm font-medium">Kembali</span>
+        </a>
+      </div>
+
+      <!-- MAIN FORM CONTAINER
+             Container utama yang menampung logo, judul, dan form
+             Digeser sedikit ke atas dengan margin negatif -->
+      <div class="flex-1 flex items-center justify-center -mt-12">
+        <div class="w-full max-w-md">
+          <!-- LOGO PTB
+                 Logo perusahaan dibuat dengan SVG
+                 Desain daun hijau yang melambangkan pertanian -->
+          <div class="flex justify-center mb-10">
+            <svg
+              class="w-16 h-16"
+              viewBox="0 0 64 64"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <!-- Daun Kiri - warna hijau tua -->
+              <ellipse
+                cx="32"
+                cy="40"
+                rx="8"
+                ry="12"
+                fill="#4CAF50"
+                transform="rotate(-20 32 40)"
+              />
+              <!-- Daun Kanan - warna hijau medium -->
+              <ellipse
+                cx="32"
+                cy="40"
+                rx="8"
+                ry="12"
+                fill="#66BB6A"
+                transform="rotate(20 32 40)"
+              />
+              <!-- Daun Tengah - warna hijau terang -->
+              <ellipse cx="32" cy="36" rx="7" ry="11" fill="#81C784" />
+              <!-- Teks PTB di bawah logo -->
+              <text
+                x="32"
+                y="56"
+                font-family="Arial, sans-serif"
+                font-size="10"
+                font-weight="bold"
+                fill="#2E7D32"
+                text-anchor="middle"
+              >
+                PTB
+              </text>
+            </svg>
+          </div>
+
+          <!-- PAGE TITLE - Judul Halaman
+                 Teks utama "Lupa Kata Sandi?" -->
+          <h1 class="text-3xl font-bold text-gray-900 text-center mb-3">
+            Lupa Kata Sandi?
+          </h1>
+
+          <!-- SUBTITLE - Subjudul
+                 Instruksi singkat untuk pengguna -->
+          <p class="text-gray-600 text-center mb-10">
+            Masukkan email Anda untuk menerima kode verifikasi
+          </p>
+
+          <!-- FORM SECTION
+                 Formulir input email dan tombol submit -->
+          <form class="space-y-5">
+            <!-- EMAIL INPUT FIELD
+                     Field untuk memasukkan alamat email -->
+            <div>
+              <!-- Label untuk input email -->
+              <label
+                for="email"
+                class="block text-sm font-medium text-gray-700 mb-2"
+              >
+                Email
+              </label>
+              <!-- Input box email dengan styling modern
+                         - border abu-abu
+                         - focus ring hijau
+                         - padding yang nyaman
+                         - placeholder text -->
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="Masukkan email Anda"
+                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none transition-all"
+                required
+              />
+            </div>
+
+            <!-- SUBMIT BUTTON - Tombol Kirim
+                     Tombol untuk mengirim kode verifikasi
+                     - Warna hijau sesuai tema pertanian
+                     - Efek hover menjadi lebih gelap
+                     - Full width untuk tampilan konsisten -->
+            <button
+              type="submit"
+              class="w-full bg-green-700 hover:bg-green-800 text-white font-medium py-3 rounded-lg transition-colors duration-200 shadow-sm"
+            >
+              Kirim Kode Verifikasi
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- ========================================
+         RIGHT SIDE - IMAGE SECTION
+         Area gambar di sisi kanan (hanya tampil di desktop)
+         ======================================== -->
+    <div class="hidden lg:block lg:w-1/2 relative">
+      <!-- BACKGROUND IMAGE
+             Gambar kebun pertanian dengan tanaman dalam barisan
+             - object-cover untuk memenuhi area tanpa distorsi
+             - absolute positioning untuk mengisi penuh -->
+      <img
+        src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?q=80&w=2070"
+        alt="Farm Field"
+        class="absolute inset-0 w-full h-full object-cover"
+      />
+      <!-- OVERLAY - Lapisan transparan
+             Overlay hijau tipis untuk menyatukan tema warna
+             opacity-10 = transparansi 10% -->
+      <div class="absolute inset-0 bg-green-900 opacity-10"></div>
+    </div>
+  </body>
+</html>
