@@ -7,35 +7,34 @@
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
   <body class="min-h-screen flex">
-    <!-- Bagian Kiri - Form Verifikasi -->
     <div class="w-full lg:w-1/2 flex items-center justify-center bg-white p-8">
       <div class="w-full max-w-md">
-        <!-- Tombol Kembali -->
-        <button
-          onclick="window.history.back()"
-          class="mb-8 p-2 hover:bg-gray-100 rounded-full transition"
-        >
-          <svg
-            class="w-6 h-6"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
+        <div class="mb-8">
+          <a
+            href="verifemail.html"
+            class="flex items-center text-gray-600 hover:text-gray-800 transition-colors"
           >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M15 19l-7-7 7-7"
-            />
-          </svg>
-        </button>
+            <svg
+              class="w-5 h-5 mr-2"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M15 19l-7-7 7-7"
+              ></path>
+            </svg>
+            <span class="text-sm font-medium">Kembali</span>
+          </a>
+        </div>
 
-        <!-- Judul -->
         <h1 class="text-3xl font-bold text-gray-900 mb-4">
           Verifikasi bahwa ini dirimu
         </h1>
 
-        <!-- Deskripsi -->
         <p class="text-gray-600 mb-8">
           Masukan 6 digit kode verifikasi yang di kirim ke email
           <span class="font-semibold" id="userEmail"
@@ -43,7 +42,6 @@
           >
         </p>
 
-        <!-- Input Kode OTP -->
         <div class="flex gap-3 mb-6" id="otpContainer">
           <input
             type="text"
@@ -83,7 +81,6 @@
           />
         </div>
 
-        <!-- Button Verifikasi -->
         <button
           id="verifyBtn"
           class="w-full bg-green-700 hover:bg-green-800 text-white py-3 rounded-xl font-medium transition-colors mb-6 disabled:bg-gray-300 disabled:cursor-not-allowed"
@@ -92,13 +89,11 @@
           Verifikasi
         </button>
 
-        <!-- Timer Resend -->
         <p class="text-center text-gray-600 text-sm">
           Kode sedang dikirim dalam
           <span id="timer" class="font-semibold">01:59</span>
         </p>
 
-        <!-- Resend Button (hidden initially) -->
         <button
           id="resendBtn"
           class="w-full text-green-700 hover:text-green-800 font-medium py-2 hidden"
@@ -108,7 +103,6 @@
       </div>
     </div>
 
-    <!-- Bagian Kanan - Background Image -->
     <div class="hidden lg:block lg:w-1/2 relative">
       <img
         src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?auto=format&fit=crop&w=1400&q=80"
@@ -230,8 +224,11 @@
 
           if (response.ok && data.success) {
             // Verifikasi berhasil
-            alert("Verifikasi berhasil!");
-            window.location.href = "/dashboard"; // Redirect ke dashboard
+            // Hapus alert verifikasi yang lama
+            // alert("Verifikasi berhasil!"); 
+            
+            // 🎯 PERUBAHAN MINIMAL: Redirect ke newpassword.html
+            window.location.href = "newpassword.html"; 
           } else {
             // Verifikasi gagal
             alert(data.message || "Kode verifikasi salah!");
